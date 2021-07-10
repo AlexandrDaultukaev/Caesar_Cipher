@@ -1,3 +1,5 @@
+import caesar_art
+
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
@@ -21,4 +23,5 @@ def caesar_cipher(text, shift, direction):
         message += alphabet[index]
     return message
 
+print(caesar_art.logo)
 print(caesar_cipher(text, shift, direction))
