@@ -11,12 +11,17 @@ def caesar_cipher(text, shift, direction):
             shift *= -1
     message = ""
     for letter in text:
-        index = alphabet.index(letter)+shift
-        # проверяем, выходит ли индекс за рамки списка
-        if index > len(alphabet) - 1:
-            # делим на размер списка, чтобы получить индекс в пределах списка
-            index = index % len(alphabet)
-        message += alphabet[index]
+        # если буква из текста есть в алфавите, то кодируем/декодируем её
+        if letter in alphabet:
+            index = alphabet.index(letter)+shift
+            # проверяем, выходит ли индекс за рамки списка
+            if index > len(alphabet) - 1:
+                # делим на размер списка, чтобы получить индекс в пределах списка
+                index = index % len(alphabet)
+            message += alphabet[index]
+        else:
+            # если буквы в алфавите нет, то записываем её без кодирования/декодирования
+            message += letter
     return message
 
 again = "yes"
