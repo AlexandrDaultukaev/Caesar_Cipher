@@ -9,7 +9,7 @@ def caesar_cipher(text, shift, direction):
     if shift > len(alphabet) - 1:
         # делим на размер списка, чтобы получить сдвиг в пределах списка
         shift = shift % len(alphabet)
-        if direction == "decode":
+    if direction == "decode":
             shift *= -1
     message = ""
     for letter in text:
